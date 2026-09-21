@@ -31,7 +31,7 @@ Removes the controller from its Lit host and unsubscribes observers.
 ### mutate()
 
 ```ts
-mutate: (...args) => void;
+mutate: (...args: Parameters<MutateFunction<TData, TError, TVariables, TOnMutateResult>>) => void;
 ```
 
 Starts the mutation and swallows the returned promise.
@@ -42,7 +42,7 @@ Throws synchronously if no `QueryClient` can be resolved.
 
 ##### args
 
-...`Parameters`\<`MutateFunction`\<`TData`, `TError`, `TVariables`, `TOnMutateResult`\>\>
+...`Parameters`\<[`MutateFunction`](MutateFunction.md)\<`TData`, `TError`, `TVariables`, `TOnMutateResult`\>\>
 
 #### Returns
 
@@ -61,7 +61,7 @@ Rejects if no `QueryClient` can be resolved.
 ### render()
 
 ```ts
-render: <TRenderers>(renderers) => RendererResult<MutationObserverResult<TData, TError, TVariables, TOnMutateResult>, TRenderers>;
+render: <TRenderers>(renderers: TRenderers) => RendererResult<MutationObserverResult<TData, TError, TVariables, TOnMutateResult>, TRenderers>;
 ```
 
 Renders the mutation result using the appropriate renderer from the given set, based on the result's `status`.
@@ -70,7 +70,7 @@ Renders the mutation result using the appropriate renderer from the given set, b
 
 ##### TRenderers
 
-`TRenderers` *extends* [`ResultRenderers`](ResultRenderers.md)\<`MutationObserverResult`\<`TData`, `TError`, `TVariables`, `TOnMutateResult`\>\>
+`TRenderers` *extends* [`ResultRenderers`](ResultRenderers.md)\<[`MutationObserverResult`](MutationObserverResult.md)\<`TData`, `TError`, `TVariables`, `TOnMutateResult`\>\>
 
 #### Parameters
 
@@ -80,7 +80,7 @@ Renders the mutation result using the appropriate renderer from the given set, b
 
 #### Returns
 
-[`RendererResult`](RendererResult.md)\<`MutationObserverResult`\<`TData`, `TError`, `TVariables`, `TOnMutateResult`\>, `TRenderers`\>
+[`RendererResult`](RendererResult.md)\<[`MutationObserverResult`](MutationObserverResult.md)\<`TData`, `TError`, `TVariables`, `TOnMutateResult`\>, `TRenderers`\>
 
 ### reset
 

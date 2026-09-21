@@ -1,4 +1,4 @@
-import { describe, expect, it } from 'vitest'
+import { describe, expect, it, onTestFinished } from 'vitest'
 import { keepPreviousData, QueryClient } from '@tanstack/query-core'
 import { sleep } from '@tanstack/query-test-utils'
 import type { ReactiveController, ReactiveControllerHost } from 'lit'
@@ -1531,6 +1531,7 @@ describe('createQueryController', () => {
       },
       client,
     )
+    onTestFinished(() => query.destroy())
 
     const pendingUi = query.render({
       pending: () => 'pending-ui',
@@ -1549,8 +1550,6 @@ describe('createQueryController', () => {
       error: () => 'error-ui',
     })
     expect(successUi).toBe('success-ok')
-
-    query.destroy()
   })
 
   it('renders error branch via query.render when query fails', async () => {
@@ -1574,6 +1573,7 @@ describe('createQueryController', () => {
       },
       client,
     )
+    onTestFinished(() => query.destroy())
 
     host.connect()
     host.update()
@@ -1585,8 +1585,6 @@ describe('createQueryController', () => {
       error: (result) => result.error.message,
     })
     expect(errorUi).toBe('render-failed')
-
-    query.destroy()
   })
 
   it('returns undefined when no renderer matches current query status', async () => {
@@ -1608,6 +1606,7 @@ describe('createQueryController', () => {
       },
       client,
     )
+    onTestFinished(() => query.destroy())
 
     // In pending state but no pending renderer provided — should return undefined
     const noMatchResult = query.render({
@@ -1625,7 +1624,5 @@ describe('createQueryController', () => {
       error: () => 'error-ui',
     })
     expect(noSuccessRenderer).toBeUndefined()
-
-    query.destroy()
   })
 })

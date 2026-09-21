@@ -39,7 +39,7 @@ Refetches the current query.
 ### render()
 
 ```ts
-render: <TRenderers>(renderers) => RendererResult<QueryObserverResult<TData, TError>, TRenderers>;
+render: <TRenderers>(renderers: TRenderers) => RendererResult<QueryObserverResult<TData, TError>, TRenderers>;
 ```
 
 Renders the query result using the appropriate renderer from the given set, based on the result's `status`.
@@ -48,7 +48,7 @@ Renders the query result using the appropriate renderer from the given set, base
 
 ##### TRenderers
 
-`TRenderers` *extends* [`ResultRenderers`](ResultRenderers.md)\<`QueryObserverResult`\<`TData`, `TError`\>\>
+`TRenderers` *extends* [`ResultRenderers`](ResultRenderers.md)\<[`QueryObserverResult`](QueryObserverResult.md)\<`TData`, `TError`\>\>
 
 #### Parameters
 
@@ -58,7 +58,7 @@ Renders the query result using the appropriate renderer from the given set, base
 
 #### Returns
 
-[`RendererResult`](RendererResult.md)\<`QueryObserverResult`\<`TData`, `TError`\>, `TRenderers`\>
+[`RendererResult`](RendererResult.md)\<[`QueryObserverResult`](QueryObserverResult.md)\<`TData`, `TError`\>, `TRenderers`\>
 
 ### suspense()
 
@@ -70,7 +70,7 @@ Resolves with an optimistic query result, fetching first when needed.
 
 #### Returns
 
-`Promise`\<`QueryObserverResult`\<`TData`, `TError`\>\>
+`Promise`\<[`QueryObserverResult`](QueryObserverResult.md)\<`TData`, `TError`\>\>
 
 ## Type Parameters
 

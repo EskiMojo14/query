@@ -56,7 +56,7 @@ Refetches the current infinite query.
 ### render()
 
 ```ts
-render: <TRenderers>(renderers) => RendererResult<InfiniteQueryObserverResult<TData, TError>, TRenderers>;
+render: <TRenderers>(renderers: TRenderers) => RendererResult<InfiniteQueryObserverResult<TData, TError>, TRenderers>;
 ```
 
 Renders the query result using the appropriate renderer from the given set, based on the result's `status`.
@@ -65,7 +65,7 @@ Renders the query result using the appropriate renderer from the given set, base
 
 ##### TRenderers
 
-`TRenderers` *extends* [`ResultRenderers`](ResultRenderers.md)\<`InfiniteQueryObserverResult`\<`TData`, `TError`\>\>
+`TRenderers` *extends* [`ResultRenderers`](ResultRenderers.md)\<[`InfiniteQueryObserverResult`](InfiniteQueryObserverResult.md)\<`TData`, `TError`\>\>
 
 #### Parameters
 
@@ -75,7 +75,7 @@ Renders the query result using the appropriate renderer from the given set, base
 
 #### Returns
 
-[`RendererResult`](RendererResult.md)\<`InfiniteQueryObserverResult`\<`TData`, `TError`\>, `TRenderers`\>
+[`RendererResult`](RendererResult.md)\<[`InfiniteQueryObserverResult`](InfiniteQueryObserverResult.md)\<`TData`, `TError`\>, `TRenderers`\>
 
 ## Type Parameters
 

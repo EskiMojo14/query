@@ -4,7 +4,7 @@ title: renderResult
 ---
 
 ```ts
-function renderResult<TResult, TRenderers>(result, renderers): RendererResult<TResult, TRenderers>;
+function renderResult<TResult, TRenderers>(result: TResult, renderers: TRenderers): RendererResult<TResult, TRenderers>;
 ```
 
 Defined in: [packages/lit-query/src/render.ts:44](https://github.com/TanStack/query/blob/main/packages/lit-query/src/render.ts#L44)
